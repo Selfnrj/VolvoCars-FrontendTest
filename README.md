@@ -1,4 +1,4 @@
-# VolvoCars Frontend test - Ambjörn Fagerström
+# VolvoCars Frontend Test by Ambjörn Fagerström
 
 ## Getting Started
 
