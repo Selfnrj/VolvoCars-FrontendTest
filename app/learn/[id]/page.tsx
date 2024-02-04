@@ -5,7 +5,7 @@ export default function LearnPage({ params }: { params: { id: string } }) {
   const carsdetails = cars.find((car) => car.id === params.id);
 
   return (
-    <div className=" max-w-screen-md mx-auto">
+    <div className=" max-w-screen-md mx-auto py-16">
       <h1 className="text-3xl font-bold mb-4">
         {carsdetails?.modelName}{" "}
         <span className="text-gray-500 font-normal">
@@ -20,6 +20,12 @@ export default function LearnPage({ params }: { params: { id: string } }) {
         className="mb-4"
       />
       <h2 className="text-xl font-bold mb-4">Learn more</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea earum
+        reprehenderit tenetur vero excepturi ex commodi nemo eius autem ducimus
+        neque nisi voluptatum necessitatibus nostrum itaque cum quos, ab
+        maiores.
+      </p>
     </div>
   );
 }

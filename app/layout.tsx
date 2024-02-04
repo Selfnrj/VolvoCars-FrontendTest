@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { StyleProvider, ThemePicker } from "vcc-ui";
+import { Suspense } from "react";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +22,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <StyleProvider>
           <ThemePicker variant="light">
-            <main className="max-w-screen-xl mx-auto p-4 sm:p-24">
-              {children}
-            </main>
+            <Suspense>
+              <main className="max-w-screen-xl mx-auto">
+                <Header />
+                {children}
+              </main>
+            </Suspense>
           </ThemePicker>
         </StyleProvider>
       </body>
