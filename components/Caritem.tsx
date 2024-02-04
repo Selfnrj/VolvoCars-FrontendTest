@@ -13,7 +13,7 @@ type Props = {
 
 export default function CarItem({ car }: Props) {
   return (
-    <>
+    <div className="mb-8">
       <small className="uppercase text-gray-600 text-sm font-semibold">
         {car.bodyType}
       </small>
@@ -26,12 +26,12 @@ export default function CarItem({ car }: Props) {
         alt={car.modelName}
         width={500}
         height={375}
-        className="block h-full w-full object-cover"
+        className="block"
       />
       <div className="flex justify-center mt-8">
         <ArrowLink title="Learn" url={`/learn/${car.id}`} />
         <ArrowLink title="Shop" url={`/shop/${car.id}`} />
       </div>
-    </>
+    </div>
   );
 }

@@ -7,10 +7,9 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { SelectInput } from "vcc-ui";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Link from "next/link";
+import CarItem from "./CarItem";
 
 import "swiper/css";
-import CarItem from "./CarItem";
 
 export default function ImageSlider() {
   const searchParams = useSearchParams();
@@ -42,7 +41,7 @@ export default function ImageSlider() {
   };
 
   return (
-    <>
+    <div className="ml-4 sm:mx-4">
       <div className="flex items-center mb-8">
         <div className="w-[200px] mr-4">
           <SelectInput
@@ -63,19 +62,17 @@ export default function ImageSlider() {
         )}
       </div>
       <Swiper
-        spaceBetween={30}
+        slidesPerView={1.2}
+        spaceBetween={20}
         breakpoints={{
           640: {
-            slidesPerView: 1.5,
-            spaceBetween: 0,
+            slidesPerView: 2,
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 3,
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 30,
           },
         }}
         navigation={{
@@ -114,6 +111,6 @@ export default function ImageSlider() {
         </div>
         <div className="swiper-pagination sm:hidden" />
       </Swiper>
-    </>
+    </div>
   );
 }
