@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { SelectInput } from "vcc-ui";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperItem from "./CarItem";
+import SwiperItem from "./SwiperItem";
 import "swiper/css";
 
 export default function ImageSlider() {
