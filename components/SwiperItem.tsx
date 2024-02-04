@@ -1,14 +1,9 @@
 ﻿import Image from "next/image";
 import ArrowLink from "./ArrowLink";
+import { Car } from "@/typings";
 
 type Props = {
-  car: {
-    id: string;
-    modelName: string;
-    bodyType: string;
-    modelType: string;
-    imageUrl: string;
-  };
+  car: Car;
 };
 
 export default function SwiperItem({ car }: Props) {
@@ -26,6 +21,7 @@ export default function SwiperItem({ car }: Props) {
         alt={car.modelName}
         width={500}
         height={375}
+        priority
         className="block"
       />
       <div className="flex justify-center mt-8">

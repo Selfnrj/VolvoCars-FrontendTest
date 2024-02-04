@@ -1,4 +1,12 @@
-﻿export const cars = [
+﻿interface Car {
+  id: string;
+  modelName: string;
+  bodyType: string;
+  modelType: string;
+  imageUrl: string;
+}
+
+export const cars: Car[] = [
   {
     id: "xc90-recharge",
     modelName: "XC90 Recharge",

@@ -1,14 +1,14 @@
 ﻿"use client";
 
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cars } from "@/public/api/cars";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SelectInput } from "vcc-ui";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperItem from "./SwiperItem";
 import "swiper/css";
+import Filter from "./Filter";
+import SwiperNavigation from "./SwiperNavigation";
 
 export default function ImageSlider() {
   const searchParams = useSearchParams();
@@ -41,25 +41,12 @@ export default function ImageSlider() {
 
   return (
     <div className="ml-4 sm:mx-4">
-      <div className="flex items-center mb-8">
-        <div className="w-[200px] mr-4">
-          <SelectInput
-            className="w-full"
-            label={"Body type"}
-            value={value}
-            onChange={handleChange}
-          >
-            <option value="suv">Suv</option>
-            <option value="estate">Estate</option>
-            <option value="sedan">Sedan</option>
-          </SelectInput>
-        </div>
-        {selectedType && (
-          <button onClick={handleClick} className="text-blue-500 font-bold">
-            Clear
-          </button>
-        )}
-      </div>
+      <Filter
+        value={value}
+        handleChange={handleChange}
+        handleClick={handleClick}
+        selectedType={selectedType}
+      />
       <Swiper
         slidesPerView={1.2}
         spaceBetween={20}
@@ -90,23 +77,11 @@ export default function ImageSlider() {
           </SwiperSlide>
         ))}
         <div className="flex-row justify-end mt-8 hidden sm:flex">
-          <button className="swiper-button-prev disabled:opacity-50 disabled:cursor-not-allowed">
-            <Image
-              src="/chevron-circled.svg"
-              alt="chevron-left"
-              width={50}
-              height={50}
-              className="transform rotate-180 mr-4"
-            />
-          </button>
-          <button className="swiper-button-next disabled:opacity-50 disabled:cursor-not-allowed">
-            <Image
-              src="/chevron-circled.svg"
-              alt="chevron-left"
-              width={50}
-              height={50}
-            />
-          </button>
+          <SwiperNavigation
+            className="transform rotate-180 mr-4"
+            direction="prev"
+          />
+          <SwiperNavigation direction="next" />
         </div>
         <div className="swiper-pagination sm:hidden" />
       </Swiper>

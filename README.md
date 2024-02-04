@@ -1,6 +1,6 @@
 # VolvoCars Frontend Test by Ambjörn Fagerström
 
-[Demo](volvo-cars-frontend-test-p2655wuvh-selfnrj.vercel.app){:target="\_blank"}
+[Demo](https://volvo-cars-frontend-test.vercel.app)
 
 ## Getting Started
 
