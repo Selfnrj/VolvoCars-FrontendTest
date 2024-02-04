@@ -11,7 +11,7 @@ type Props = {
   };
 };
 
-export default function CarItem({ car }: Props) {
+export default function SwiperItem({ car }: Props) {
   return (
     <div className="mb-8">
       <small className="uppercase text-gray-600 text-sm font-semibold">

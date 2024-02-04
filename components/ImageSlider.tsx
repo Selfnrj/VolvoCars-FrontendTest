@@ -7,8 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { SelectInput } from "vcc-ui";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import CarItem from "./CarItem";
-
+import SwiperItem from "./CarItem";
 import "swiper/css";
 
 export default function ImageSlider() {
@@ -87,7 +86,7 @@ export default function ImageSlider() {
       >
         {filteredCars.map((car) => (
           <SwiperSlide key={car.id}>
-            <CarItem car={car} />
+            <SwiperItem car={car} />
           </SwiperSlide>
         ))}
         <div className="flex-row justify-end mt-8 hidden sm:flex">
