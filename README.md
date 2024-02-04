@@ -8,13 +8,13 @@ First, install packages:
 npm i
 ```
 
-Second, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-Third, run the production build:
+Run the production build:
 
 ```bash
 npm run build
